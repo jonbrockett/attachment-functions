@@ -7,20 +7,42 @@ Using the new functions will run each image through a check to see if it's an SV
 ## Instructions ##
 You can either include this code directly in your __functions.php__ file in your theme or add to a directory, such as __library/attachment-functions.php__ then include it in your __functions.php__ code:
 
-/\*\* Image functions for attachment images \*/
+/\*\* Attachment Functions \*/
 require_once( 'library/attachment-functions.php' );
 
-## The Functions ##
-Use the same as https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
-__get_the_image($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__    Returns the image or inline SVG code
-__the_image($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__    Prints the image or inline SVG code
-__get_the_thumbnail_bg($post = null, $size = 'post-thumbnail')__    Returns the thumbnail image or inline SVG code
-__the_thumbnail_bg($size = 'post-thumbnail')__    Prints the thumbnail image or inline SVG code
-__get_the_image_bg($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__    If an SVG returns the image as inline SVG CSS code otherwise it returns the image as a URL
-__the_image_bg($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__    Prints the background image SVG inline or image url
+## WordPress Functions Reference ##
+https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
+https://developer.wordpress.org/reference/functions/wp_get_attachment_image_url/
+https://developer.wordpress.org/reference/functions/get_the_post_thumbnail_url/
 
-A number of other functions that are used internally
-__is_svg($attachment_id)__   Returns True/False
-__get_svg($attachment_id,$size = 'thumbnail', $icon = false)__    Returns the SVG code
-__the_svg($attachment_id)__    Prints the SVG code
-__generate_ratio($new_size = array(), $old_size = array())__    Takes a value and returns an array of the width, height (Mainly used to assist __get_the_image()__ when generating the SVG size)
+## The Functions ##
+  * __get_the_image($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__
+    * Returns the image or inline SVG code
+
+  * __the_image($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__
+    * Prints the image or inline SVG code
+
+  * __get_the_thumbnail_bg($post = null, $size = 'post-thumbnail')__
+    * Returns the thumbnail image or inline SVG code
+
+  * __the_thumbnail_bg($size = 'post-thumbnail')__
+    * Prints the thumbnail image or inline SVG code
+
+  * __get_the_image_bg($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__
+    * If an SVG returns the image as inline SVG CSS code otherwise it returns the image as a URL
+
+  * __the_image_bg($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__
+    * Prints the background image SVG inline or image url
+
+### A number of other functions that are used internally ###
+  * __is_svg($attachment_id)__
+    * Returns True/False
+
+  * __get_svg($attachment_id,$size = 'thumbnail', $icon = false)__
+    * Returns the SVG code
+
+  * __the_svg($attachment_id)__
+    * Prints the SVG code
+
+  * __generate_ratio($new_size = array(), $old_size = array())__
+    * Takes a value and returns an array of the width, height (Mainly used to assist __get_the_image()__ when generating the SVG size)
