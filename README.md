@@ -4,6 +4,12 @@ WordPress functions for developers to use instead of wp_get_attachment functions
 ## What It Does ##
 Using the new functions will run each image through a check to see if it's an SVG. It'll then output the SVG using the alt tag from the media library for the uploaded image, add role="img", and also sizes it. If it's not an SVG it runs wp_get_attachnment_image or equivalent WP function.
 
+## Instructions ##
+You can either include this code directly in your __functions.php__ file in your theme or add to a directory, such as __library/attachment-functions.php__ then include it in your __functions.php__ code:
+
+/\*\* Image functions for attachment images \*/
+require_once( 'library/attachment-functions.php' );
+
 ## The Functions ##
 Use the same as https://developer.wordpress.org/reference/functions/wp_get_attachment_image/
 __get_the_image($attachment_id,$size = 'thumbnail', $icon = false, $attr = '')__    Returns the image or inline SVG code
